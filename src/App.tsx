@@ -37,10 +37,13 @@ function App() {
       <h2>Chuck Info: </h2>
       <ChuckInfo whalessaved={whalesSaved} roundhousekicks={roundHouseKicks} />
       <h2>Jokes: </h2>
-
-      {jokes.map((j) => {
-        return <ChuckJoke id={j.id} joke={j.joke} />;
-      })}
+      <ul>
+        {jokes.map((joke) => (
+          <li key={joke.id}>
+            <ChuckJoke joke={joke.joke} id={joke.id} />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
